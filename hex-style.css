@@ -1,5 +1,5 @@
 body {
-    background-color: cyan;
+    background-color: black;
 }
 
 .hexrow {
@@ -17,7 +17,6 @@ body {
     */
     margin: 0 25px; 
     position: relative;
-    background-image: url(http://i1166.photobucket.com/albums/q605/Artem_Lebedev/dog-training-collars.jpg);
     background-position: -50px 0; /* -left position -1 x width x sin(30) */
     background-repeat: no-repeat;
     background-size: auto 120%;
@@ -132,7 +131,6 @@ body {
 }
 
 .hexrow:nth-child(2) > div:nth-child(1) {
-    background-image: url(http://i724.photobucket.com/albums/ww244/NBAchikk1995/flowers.jpg);
 }
 
 .hexrow:nth-child(2) > div:nth-child(1) > span {
@@ -143,28 +141,19 @@ body {
     font-weight: bold;
 }
 
-.hexrow:nth-child(2) > div:nth-child(2) {
-    background-image: url(http://i197.photobucket.com/albums/aa231/sterling_red/landscape.jpg);
-    color: #ffffff;
-}
-
-.hexrow:nth-child(2) > div:nth-child(3) {
-    background-image: url(http://i257.photobucket.com/albums/hh204/h22prld98/2157781306_7a7a8e4cf7.jpg);
-    opacity: .3;
-    color: #ffffff;
-}
-
 .hexrow:nth-child(2) > div:nth-child(3) > div:before {
     /* nothing special needed here */
 }
 
 .hexrow:nth-child(2) > div:nth-child(4) {
-    background-image: url(http://i916.photobucket.com/albums/ad8/paulak100/Obraz395.jpg);
     /*you can shift a large background image, but it can get complicated
     best to keep the image as the total width (200px) and height (174px)
     that the hex would be.
     */
+    /*
+    background-image: url(http://i916.photobucket.com/albums/ad8/paulak100/Obraz395.jpg);
     background-position: -150px -20px;
+    */
 }
 
 .hexrow:nth-child(2) > div:nth-child(4) > div:before {
@@ -173,5 +162,17 @@ body {
 
 .hexrow .cool {
     background-image: url(https://udn.epicgames.com/Three/rsrc/Three/TerrainAlphamaps/UE3TerrainFinal.jpg);
+}
+
+.Tree {
+    background-image: url(http://www-evasion.imag.fr/people/Fabrice.Neyret/images/scenes_naturelles/foret_et_canopee/forest.aerial.jpg);
+}
+
+.Grass {
+    background-image: url(http://everystockphoto.s3.amazonaws.com/green_colorfield_grass_899946_o.jpg);
+}
+
+.Water {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/71/Starr_030521-0158_Sesuvium_portulacastrum.jpg);
 }
 

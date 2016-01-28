@@ -2,8 +2,8 @@
 $(document).ready(function() {
 
 var map_grid = {
-  width: 20,
-  height: 10
+  width: 48,
+  height: 22
 };
 
 var locations = {
@@ -76,7 +76,8 @@ function add_hex_row() {
 for (var i=0; i<terrain_map.length; i++) {
   var row = add_hex_row();
   for (var j=0; j < terrain_map[i].length; j++) {
-    var hex = make_hex('test_class', '{0}, {1}'.format(i, j));
+    var text = '{0}, {1}'.format(i, j);
+    var hex = make_hex(terrain_map[i][j].type, '');
     row.append(hex);
   }
 }
