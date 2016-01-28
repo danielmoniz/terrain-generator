@@ -1,4 +1,6 @@
 
+$(document).ready(function() {
+
 var map_grid = {
   width: 20,
   height: 10
@@ -27,40 +29,6 @@ var options = {
   location: locations.black_forest,
   map_grid: map_grid,
 
-  /*
-      map_sizes: {
-        miniature: {
-          width: 10,
-          height: 6,
-          tile: tile,
-        },
-        tiny: {
-          width: 15,
-          height: 8,
-          tile: tile,
-        },
-        small: {
-          width: 25,
-          height: 15,
-          tile: tile,
-        },
-        medium: {
-          width: 33,
-          height: 19,
-          tile: tile,
-        },
-        large: {
-          //width: Math.ceil(map_width),
-          //height: Math.ceil(map_width),
-          //height: Math.ceil(map_width * 3 / 4),
-          //height: Math.ceil(map_width * 0.5625),
-          width: 40,
-          height: 23,
-          tile: tile,
-        },
-      },
-  */
-
       board_title: {
         height: 24,
       },
@@ -70,7 +38,7 @@ var options = {
       },
 
       player_colour: { 0: "Blue", 1: "White" },
-      num_sections: 3,
+      num_sections: 1,
       num_cities_total: 9,
 
       max_farm_distance: 2,
@@ -78,6 +46,39 @@ var options = {
 };
 
 var mapCreator = new MapCreator();
-//console.log(mapCreator);
-console.log(mapCreator.buildNewMap(options));
+var terrain_map = mapCreator.buildNewMap(options).terrain_type;
+console.log(terrain_map);
 
+var terrain_map = terrain_map[0].map(function(col, i) { 
+  return terrain_map.map(function(row) { 
+    return row[i] 
+  });
+});
+
+function make_hex(class_name, content) {
+  var hex_div = jQuery('<div/>', {
+    class: class_name,
+  });
+  var contents = "<span>{0}</span><div></div><div></div>".format(content);
+
+  hex_div.append(contents);
+  return hex_div;
+}
+
+function add_hex_row() {
+  var hex_row_div = jQuery('<div/>', {
+    class: 'hexrow',
+  });
+  $('.hexes').append(hex_row_div);
+  return hex_row_div;
+}
+
+for (var i=0; i<terrain_map.length; i++) {
+  var row = add_hex_row();
+  for (var j=0; j < terrain_map[i].length; j++) {
+    var hex = make_hex('test_class', '{0}, {1}'.format(i, j));
+    row.append(hex);
+  }
+}
+
+});
