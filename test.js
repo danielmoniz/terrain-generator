@@ -35,39 +35,13 @@ var MapCreator = function(options) {
     this.buildEmptyGameData(options, this.Game);
     this.addWater(options, this.Game, options.location);
 
-    var cities = this.addCities(options, this.Game, options.num_cities_total);
-    var town_locations = this.addTownsAroundCities(options, this.Game, cities);
-    this.addFarms(options, this.Game, cities);
+    //var cities = this.addCities(options, this.Game, options.num_cities_total);
+    //var town_locations = this.addTownsAroundCities(options, this.Game, cities);
+    //this.addFarms(options, this.Game, cities);
     this.addTrees(options, this.Game, options.location);
     this.addGrass(options, this.Game);
 
-    //this.updateBuildDifficultyData(options, this.Game.terrain_type);
-
-    this.buildTerrainData(options, this.Game, this.Game.terrain_type);
-    this.addSupplyRoads(options, this.Game, cities, 1);
-    this.addRoadsBetweenCities(options, this.Game, cities);
-    this.cleanRoads(options, this.Game.roads);
-    this.buildTerrainDataWithRoads(options, this.Game, this.Game.terrain_type, this.Game.roads);
-
-    // call again to ensure bridge values are set
-    this.buildTerrainData(options, this.Game, this.Game.terrain_type);
-
-    this.Game.starting_units = this.addStartingUnits(options, this.Game);
-    /*
-
-    if (Game.fog_of_war) {
-      shadowHeightMap(Game.location);
-      LineOfSight.clearFog();
-    }
-    */
-
-   var map_data = {};
-   map_data.terrain_type = this.Game.terrain_type;
-   map_data.height_map = this.Game.height_map;
-   map_data.player_supply_roads = this.Game.player_supply_roads;
-   map_data.supply_route = this.Game.supply_route;
-
-   return this.Game;
+    return this.Game;
   };
 
   this.getWidthOfSections = function(options) {
